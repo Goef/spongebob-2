@@ -1,8 +1,15 @@
 class Game{
     private static instance:Game
+    character:Character
 
     constructor(){
+        
+        this.character = new Character()
+        console.log("skuur")
         this.gameLoop()
+
+
+
 
     }
 
@@ -14,7 +21,11 @@ class Game{
     }
 
     private gameLoop():void{
+        this.character.update()
+
         requestAnimationFrame(() => this.gameLoop())
+
+
     }
 
 }
